@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Mini-Rift: Mitos & Leyendas</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="importmap">
+    {"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <div id="game">
+    <canvas id="game-canvas"></canvas>
+    <div id="damage-layer"></div>
+
+    <div id="top-bar">
+      <div class="team-score blue"><span>OLIMPO</span><b id="blue-score">0</b></div>
+      <div id="timer">00:00</div>
+      <div class="team-score red"><b id="red-score">0</b><span>INFRAMUNDO</span></div>
+    </div>
+
+    <div id="controls">
+      <b>CONTROLES</b>
+      <span><kbd>Click</kbd> Mover</span>
+      <span><kbd>Q</kbd> Habilidad</span>
+      <span><kbd>W</kbd> Defensa</span>
+      <span><kbd>E</kbd> Impulso</span>
+      <span><kbd>R</kbd> Poder divino</span>
+      <span><kbd>S</kbd> Detener</span>
+    </div>
+
+    <div id="bottom-hud">
+      <div id="portrait"><div id="avatar">⚡</div><span id="level">LVL 1</span></div>
+      <div class="hud-center">
+        <div class="resource hp"><i id="hp-fill"></i><span id="hp-text">650 / 650</span></div>
+        <div class="resource mp"><i id="mp-fill"></i><span id="mp-text">350 / 350</span></div>
+        <div id="abilities">
+          <button class="ability" data-key="q"><b>Q</b><em id="q-icon">💥</em><small id="q-time"></small></button>
+          <button class="ability" data-key="w"><b>W</b><em id="w-icon">🛡️</em><small id="w-time"></small></button>
+          <button class="ability" data-key="e"><b>E</b><em id="e-icon">💨</em><small id="e-time"></small></button>
+          <button class="ability ult" data-key="r"><b>R</b><em id="r-icon">☄️</em><small id="r-time"></small></button>
+        </div>
+      </div>
+      <canvas id="minimap" width="150" height="150"></canvas>
+    </div>
+
+    <div id="champion-modal" class="modal">
+      <div class="champion-card">
+        <p class="eyebrow">ELIGE TU LEGADO DIVINO</p>
+        <h1>CAMPEONES DE MITOLOGÍA</h1>
+        <div id="champion-grid"></div>
+      </div>
+    </div>
+
+    <div id="game-over" class="modal hidden">
+      <div class="champion-card"><h1 id="game-over-title">VICTORIA</h1><p id="game-over-desc"></p><button id="restart" class="primary">LUCHAR DE NUEVO</button></div>
+    </div>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
